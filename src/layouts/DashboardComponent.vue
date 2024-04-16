@@ -48,7 +48,7 @@ const navItems = reactive([
   {
     name: 'Positions',
     img: 'src/public/Suitcase.svg',
-    link: ''
+    link: '/positions'
   },
   {
     name: 'Candidates',
@@ -78,7 +78,6 @@ const openCandidates = (link) => {
   flex-shrink: 0;
   align-self: stretch;
   background: #FFB0F0;
-  height: 100vh;
 }
 
 .nav-item-logo {

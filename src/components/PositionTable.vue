@@ -3,42 +3,30 @@
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Position</th>
-          <th>level</th>
-          <th>Eval</th>
-          <th>days</th>
+          <th>Title</th>
+          <th>Level</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(candidate, index) in candidates"
+        <tr v-for="(position, index) in positions"
             :key="index"
-            @click="checkCandidate(candidate)">
-          <td>{{ candidate.name }}</td>
-          <td>{{ candidate.position }}</td>
-          <td>{{ candidate.level }}</td>
-          <td>{{ candidate.eval }}</td>
-          <td>{{ calculateDateDifference(candidate.applied) }}</td>
+            @click="checkPosition(position)">
+          <td>{{ position.title }} #{{ positions.id }}</td>
+          <td>{{ position.level }}</td>
+          <td>{{ position.date }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
 <script setup>
-import { candidates } from '@/constants/candidates';
-const emit = defineEmits('open')
-const checkCandidate = (candidate) => {
-  emit('open', candidate)
+import { positions } from '@/constants/positions';
+const emit = defineEmits('onOpen')
+const checkPosition = (position) => {
+  emit('onOpen', position)
 }
 
-function calculateDateDifference(date) {
-  const appliedDate = new Date(date);
-  const currentDate = new Date();
-  const differenceInMilliseconds = currentDate - appliedDate;
-  const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-
-  return differenceInDays;
-}
 </script>
 
 
@@ -72,6 +60,7 @@ tr {
   align-items: flex-start;
   align-self: stretch;
   overflow: hidden;
+  width: 536px;
 }
 
 table {

@@ -202,7 +202,6 @@ background: #fff;
 padding-bottom: var(--view-padding-bottom, 24px);
 flex-direction: column;
 align-items: flex-start;
-gap: var(--view-gap, 16px);
 align-self: stretch;
 border-radius: var(--view-corner-radius, 8px);
 background: var(--background-default, #FFF);

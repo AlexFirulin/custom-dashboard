@@ -11,6 +11,8 @@ import DashboardComponent from '/src/layouts/DashboardComponent.vue'
 .template-wrapepr {
    display: flex;
    align-items: flex-start;
+   align-self: stretch;
    background: #FFB0F0;
+   height: 832px;
 }
 </style>
