@@ -58,7 +58,7 @@ const navItems = reactive([
   {
     name: 'Employers',
     img: 'src/public/Office.svg',
-    link: ''
+    link: '/employer'
   }
 ])
 
